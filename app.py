@@ -122,7 +122,7 @@ async def on_chat_start():
             content=welcome_message,
             accept=["text/plain", "application/pdf"],
             max_size_mb=20,
-            timeout=3600,
+            timeout=3600
         ).send()
 
     file = files[0]
@@ -183,8 +183,3 @@ async def on_message(message: cl.Message):
 
     await cl.Message(content=answer, elements=text_elements).send()
 
-async def main():
-    await cl.run()
-
-if __name__ == "__main__":
-    asyncio.run(main())
